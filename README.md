@@ -69,7 +69,7 @@ Remove an image
 	
 * NOTE: in case of any error, eg: Error response from daemon:
 	
-	$ docker rmi -f <image_id>
+		$ docker rmi -f <image_id>
 
 Remove all images
 
@@ -240,7 +240,7 @@ Remover uma imagem
 	
 * OBS : caso der algum erro, ex : Error response from daemon:
 	
-	$ docker rmi -f <image_id> 
+		$ docker rmi -f <image_id> 
 
 Remover todas as imagens
 
