@@ -1,5 +1,3 @@
-# CODE BASE DOCKER
-
 # DOCKER BASE CODE
 
 ## What are Containers?
