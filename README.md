@@ -26,49 +26,50 @@ run your containers without the need for a complete installation of an operating
 
 Run a container:
 
-$ docker run -it ubuntu / bin / bash
+	$ docker run -it ubuntu / bin / bash
 
 Check containers in use:
 ps dockerCheck all containers:
 
-$ docker ps -a
+	$ docker ps -a
 
 Port sharing / display
 
-$ docker run -p 8080: 80 nginx
+	$ docker run -p 8080: 80 nginx
 
 Run a container in the background (detached mode)
 
-$ docker run -d -p 8080: 80 nginx
+	$ docker run -d -p 8080: 80 nginx
 
 Remove a container
 
-$ docker rm <id or container name> (-f if you want to force it)
+	$ docker rm <id or container name> (-f if you want to force it)
 
 Remove a container after exiting
 
-$ docker run --rm -p 8080: 80 nginx
+	$ docker run --rm -p 8080: 80 nginx
 
 Remove all containers (linux / mac / bash, etc.)
 
-$ docker rm $ (docker ps -a -q) -f
+	$ docker rm $ (docker ps -a -q) -f
 
 To access or execute a command on a container
 
-$ docker exec -it container-name <command or / bin / bash>
+	$ docker exec -it container-name <command or / bin / bash>
+	
 #### Images
 
 List images
 
-$ docker images
+	$ docker images
 
 Remove an image
 
-$ docker rmi <image name>
+	$ docker rmi <image name>
 
 Remove all images
 
-$ docker rmi $ (docker images -q) -f
+	$ docker rmi $ (docker images -q) -f
 
 ## Dockerfile
 
@@ -80,18 +81,18 @@ The Dockerfile has all the structure and commands necessary for actions to be pe
 
 Example of a Dockerfile
 
-FROM golang: 1.14
-WORKDIR / go / src /
-COPY. .
-RUN GOOS = linux go build -ldflags = "- s -w"
-EXPOSE 8081
-ENTRYPOINT ["./main"]
+	FROM golang: 1.14
+	WORKDIR / go / src /
+	COPY. .
+	RUN GOOS = linux go build -ldflags = "- s -w"
+	EXPOSE 8081
+	ENTRYPOINT ["./main"]
 
 ## Generating an image
 
 After creating the Dockerfile file, you can create your own image using the following command.
 
-$ docker build -t <image name>: <image version>.
+	$ docker build -t <image name>: <image version>.
 
 1. The end point signals which directory the Dockerfile is located in.
 2. If the version of the image is not informed, it will be automatically named "latest".
@@ -102,11 +103,11 @@ Dockerhub is a repository where you can make your images available, publicly or 
 For publication to be possible, you will first have to log in to your account
 typing:
 
-$ docker login
+	$ docker login
 
 After login, just push your image:
 
-$ docker push <image name>
+	$ docker push <image name>
 
 ## Docker-compose
 
@@ -118,18 +119,18 @@ The file used for the docker-compose to run successfully is called docker-
 compose.yaml.
 Example:
 
-version: '3'
-services:
-nginx:
-image: nginx
-volumes:
-- ./nginx:/usr/share/nginx/html/
-ports:
-- 8080: 80
-redis:
-image: redis: alpine
-expose:
-- 6379
+	version: '3'
+	services:
+	nginx:
+	image: nginx
+	volumes:
+	- ./nginx:/usr/share/nginx/html/
+	ports:
+	- 8080: 80
+	redis:
+	image: redis: alpine
+	expose:
+	- 6379
 
 If you look at the example above, you will see that we have two services to perform.
 
@@ -148,22 +149,22 @@ communicate on the local network created by the docker using port 6379.
 
 To start the services declared in docker-compose.yml, simply execute:
 
-$ docker-compose up
+	$ docker-compose up
 
 When you execute this command, the services will be started, however, you will notice that your terminal will be
 blocked, since the process is running. To execute in a detached way, just
 inform the "-d" parameter at the end of the instruction.
 
-$ docker-compose up -d
+	$ docker-compose up -d
 
 To end the services, simply execute:
 
-$ docker-compose down
+	$ docker-compose down
 
 If you want to see in a more "organized" way only the containers of the services being executed, just
 rotate:
 
-$ docker
+	$ docker
 
 # CÓDIGO BASE DOCKER
 
