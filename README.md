@@ -66,6 +66,10 @@ List images
 Remove an image
 
 	$ docker rmi <image name>
+	
+* NOTE: in case of any error, eg: Error response from daemon:
+	
+	$ docker rmi -f <image_id>
 
 Remove all images
 
@@ -233,6 +237,10 @@ Listar imagens
 Remover uma imagem
 
 	$ docker rmi <nome da imagem>
+	
+* OBS : caso der algum erro, ex : Error response from daemon:
+	
+	$ docker rmi -f <image_id> 
 
 Remover todas as imagens
 
